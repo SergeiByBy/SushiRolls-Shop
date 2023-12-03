@@ -13,7 +13,7 @@ const Header = ({ cart }) => {
           <Logo />
           <NavigationBar />
           <Basket cart={cart} />
-          <span class="navbar-toggler-icon"></span>
+         
         </div>
       </header>
     </>

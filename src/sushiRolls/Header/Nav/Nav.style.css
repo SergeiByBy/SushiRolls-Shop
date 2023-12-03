@@ -1,7 +1,44 @@
-.header__nav {
-  margin: 0 auto;
+.header__logo {
+  margin-right: auto;
 }
 
+.flex {
+  display: flex;
+}
 
+.header__container {
+  align-items: center;
+  justify-content: center;
+}
 
+.header__items {
+  list-style: none;
+}
 
+.header__item:not(:last-child) {
+  margin-right: 50px;
+}
+
+.header__nav {
+  margin-right: 50px;
+}
+
+[for="burger"] {
+  display: block;
+}
+#burger,
+[type="checkbox"] {
+  display: none;
+}
+
+.menu__items {
+  font-size: 1.5em;
+}
+
+.menu__items:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+.menu {
+  display: none;
+}

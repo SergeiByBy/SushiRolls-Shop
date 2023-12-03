@@ -24,11 +24,12 @@
     list-style: none;
     text-decoration: none;
     color: rgb(255, 255, 255);
-    font-size: 115%;
+    font-size: 125%;
   }
   .navItem:hover {
     color: var(--redColor);
   }
   .navItem:not(:last-child) {
-    margin-right: 10px;
+    margin-right: 40px;
   }
+  

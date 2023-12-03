@@ -119,63 +119,57 @@
 
 // export default NavBar;
 
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import Offcanvas from 'react-bootstrap/Offcanvas';
-import Logo from '../Logo/Logo';
-import { NavLink } from 'react-router-dom';
-
-const NavigationBar = ({cart})=> {
-
+import { NavLink } from "react-router-dom";
+import "./Nav.style.css";
+const NavigationBar = () => {
   return (
     <>
-      {[false].map((expand) => (
-        <Navbar key={expand}  className="bg-transparent">
-          <Container className='flex'>
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
-            <Navbar.Offcanvas
-              id={`offcanvasNavbar-expand-${expand}`}
-              aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
-              placement="end"
-            >
-              <Offcanvas.Header closeButton>
-                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-             <p className='text-center'>   Скущай Суши</p>
-                <Logo/>
-                </Offcanvas.Title>
-              </Offcanvas.Header>
-              <Offcanvas.Body>
-              <Nav className="justify-content-end flex-grow-1 pe-3">
-<NavLink to="/" className="navItem nav__link">
-  Главная
-</NavLink>
-<NavLink to="/rolls" className="navItem nav__link">
-  Роллы
-</NavLink>
-<NavLink to="/gunkans" className="navItem nav__link">
-  Гунканы
-</NavLink>
-<NavLink to="/sushi" className="navItem nav__link">
-  Суши
-</NavLink>
-<NavLink to="/sets" className="navItem nav__link">
-  Сэты
-</NavLink>
-<NavLink to="/sause" className="navItem nav__link">
-  Соусы
-</NavLink>
-
-
-                </Nav>
-              
-              </Offcanvas.Body>
-            </Navbar.Offcanvas>
-          </Container>
-        </Navbar>
-      ))}
+      <div class="container flex header__container">
+        <input id="burger" type="checkbox" />
+        <label for="burger"></label>
+        <div class="menu">
+            <NavLink to="/" className="navItem nav__link">
+              Главная
+            </NavLink>
+            <NavLink to="/rolls" className="navItem nav__link">
+              Роллы
+            </NavLink>
+            <NavLink to="/gunkans" className="navItem nav__link">
+              Гунканы
+            </NavLink>
+            <NavLink to="/sushi" className="navItem nav__link">
+              Суши
+            </NavLink>
+            <NavLink to="/sets" className="navItem nav__link">
+              Сэты
+            </NavLink>
+            <NavLink to="/sause" className="navItem nav__link">
+              Соусы
+            </NavLink>
+        </div>
+        <nav >
+            <NavLink to="/" className="navItem nav__link">
+              Главная
+            </NavLink>
+            <NavLink to="/rolls" className="navItem nav__link">
+              Роллы
+            </NavLink>
+            <NavLink to="/gunkans" className="navItem nav__link">
+              Гунканы
+            </NavLink>
+            <NavLink to="/sushi" className="navItem nav__link">
+              Суши
+            </NavLink>
+            <NavLink to="/sets" className="navItem nav__link">
+              Сэты
+            </NavLink>
+            <NavLink to="/sause" className="navItem nav__link">
+              Соусы
+            </NavLink>
+          </nav>
+      </div>
     </>
   );
-}
+};
 
 export default NavigationBar;
