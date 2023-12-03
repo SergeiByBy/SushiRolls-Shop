@@ -116,8 +116,8 @@
   nav {
     display: none;
 }
-.basket {
-  padding-right: 30px;
+.header {
+  padding: 10px 50px;
 }
 }
 @media (max-width: 800px) {
