@@ -2,7 +2,9 @@ import React from "react";
 import "./basket.style.css";
 import { Link } from "react-router-dom";
 
-const Basket = ({ cart, lenthCart }) => {
+const Basket = ({ cart }) => {
+const summEl = cart.reduce((acc,curr)=> acc + curr.count ,0)
+console.log(cart);
   return (
     <Link to="Cart" className="basket">
       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -23,7 +25,7 @@ const Basket = ({ cart, lenthCart }) => {
           ></path>{" "}
         </g>
       </svg>
-      <span className="basketCount">{cart.length}</span>
+      <span className="basketCount">{summEl}</span>
     </Link>
   );
 };

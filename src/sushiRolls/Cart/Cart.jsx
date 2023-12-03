@@ -2,8 +2,8 @@ import React from "react";
 import "./Cart.style.css";
 import ButtonBack from "../ButtonBack/ButtonBack";
 
-const Cart = ({ cart, deleteItemFromCart, summPrices,plusElFromCart,addItemToCart  }) => {
- 
+const Cart = ({ cart, deleteItemFromCart, addItemToCart  }) => {
+const plusElFromCart = cart.reduce((acc,curr)=>acc+curr.price*curr.count,0)
   return (
     <div className="container">
       <div className="cartBlock">
@@ -66,7 +66,6 @@ const Cart = ({ cart, deleteItemFromCart, summPrices,plusElFromCart,addItemToCar
                               {" "}
                               <button
                                 className="btn"
-                              
                               >
                                 Удалить
                               </button>
@@ -88,9 +87,8 @@ const Cart = ({ cart, deleteItemFromCart, summPrices,plusElFromCart,addItemToCar
                   <span className="h5">Итого:</span>{" "}
                   <span
                     className="total-price"
-                    onChange={() => summPrices(cart)}
                   >
-                    0
+                    {plusElFromCart}
                   </span>{" "}
                   <span className="rouble">₽</span>
                 </p>
