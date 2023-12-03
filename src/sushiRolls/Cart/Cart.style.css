@@ -1,0 +1,74 @@
+.form-control {
+  margin-bottom: 35px;
+}
+.btnGoBack {
+  z-index: 10;
+}
+.cartItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 10px;
+  padding: 0 20px;
+}
+.cartItemsHeader table {
+  border-bottom: 1px dashed grey;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  width: 100%;
+}
+.cartItemsHeader {
+  padding: 5px 30px;
+}
+.cartItemImg {
+  width: 120px;
+  height: 100px;
+  border-radius: 30px;
+}
+
+div tr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.basketTable th:first-child,
+.basketTable td:first-child {
+  width: 24%;
+}
+.basketTable th,
+.basketTable td {
+  width: 19%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.count {
+  display: flex;
+}
+
+.count .change {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #35e201;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.count .itemCount {
+  width: 55px;
+  text-align: center;
+  font-weight: 700;
+  background-color: #fff;
+  border: none;
+  border-radius: 3px;
+  margin: 0 5px;
+}
+
+.count .minus.min {
+  background-color: #989797;
+}

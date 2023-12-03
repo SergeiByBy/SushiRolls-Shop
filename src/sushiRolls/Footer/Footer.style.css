@@ -1,0 +1,76 @@
+.footer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  align-self: center;
+  justify-content: center;
+  color: #ffffff;
+}
+.footer_icons {
+  display: flex;
+  justify-content: center;
+}
+.footer_bottom p, .footer_bottom a {
+  margin: 0;
+  color: white;
+  text-align: center;
+}
+.footer_bottom p:hover, .footer_bottom a:hover {
+  color: var(--redColor);
+  
+}
+.footer_part {
+  justify-content: center;
+  align-self: center;
+  flex-direction: column;
+  margin: 0 auto;
+  text-align: center;
+}
+.footer_part ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+}
+.footer_part:first-child {
+  padding-top: 20px;
+}
+.footer_part li {
+  margin: 10px 0;
+  font-size: 110%;
+}
+.footer_part a{
+  color: #ffffff;
+}
+.footer_part a:hover {
+  color: var(--redColor);
+}
+.footer img {
+  width: 40px;
+  height: 40px;
+}
+.footer_icons ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.footer_icons li svg {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+  transition: transform 0.2s ease-in-out;
+}
+.footer_icons li svg:hover {
+  transform: scale(110%);
+}
+.boxMainLogo {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
+.gunkansBloc {
+  padding: 60px 0;
+}
+.gunkansBloc li {
+  text-align: justify;
+}
