@@ -1,23 +1,7 @@
 .header__nav {
   margin: 0 auto;
 }
-.list-reset,
-.navItem {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-decoration: none;
-  color: rgb(255, 255, 255);
-  font-size: 115%;
-}
-.navItem:hover {
-  color: var(--redColor);
-}
-.navItem:not(:last-child) {
-  margin-right: 50px;
-}
 
-.header__container {
-  align-items: center;
-  justify-content: space-between;
-}
+
+
+

@@ -25,7 +25,7 @@ console.log(cart);
           ></path>{" "}
         </g>
       </svg>
-      <span className="basketCount">{summEl}</span>
+      <span className="basketCount sm">{summEl}</span>
     </Link>
   );
 };

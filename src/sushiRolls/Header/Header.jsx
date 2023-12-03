@@ -9,7 +9,7 @@ const Header = ({ cart }) => {
     <>
       <HeaderLine />
       <header id="header" className="header">
-        <div className="container header__container flex">
+        <div className="container header_container flex">
           <Logo />
           <NavigationBar />
           <Basket cart={cart} />

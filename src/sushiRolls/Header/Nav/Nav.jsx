@@ -119,22 +119,20 @@
 
 // export default NavBar;
 
-import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import Logo from '../Logo/Logo';
+import { NavLink } from 'react-router-dom';
 
 const NavigationBar = ({cart})=> {
 
   return (
     <>
-      {[false, 'sm'].map((expand) => (
-        <Navbar key={expand} expand={expand} className="bg-body-tertiary">
-          <Container fluid>
-            <Navbar.Brand href="#">Navbar Offcanvas</Navbar.Brand>
+      {[false].map((expand) => (
+        <Navbar key={expand}  className="bg-transparent">
+          <Container className='flex'>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
@@ -143,41 +141,34 @@ const NavigationBar = ({cart})=> {
             >
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                  Offcanvas
+             <p className='text-center'>   Скущай Суши</p>
+                <Logo/>
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
               <Nav className="justify-content-end flex-grow-1 pe-3">
-<Nav.Link to="/" className="navItem nav__link">
+<NavLink to="/" className="navItem nav__link">
   Главная
-</Nav.Link>
-<Nav.Link to="/rolls" className="navItem nav__link">
+</NavLink>
+<NavLink to="/rolls" className="navItem nav__link">
   Роллы
-</Nav.Link>
-<Nav.Link to="/gunkans" className="navItem nav__link">
+</NavLink>
+<NavLink to="/gunkans" className="navItem nav__link">
   Гунканы
-</Nav.Link>
-<Nav.Link to="/sushi" className="navItem nav__link">
+</NavLink>
+<NavLink to="/sushi" className="navItem nav__link">
   Суши
-</Nav.Link>
-<Nav.Link to="/sets" className="navItem nav__link">
+</NavLink>
+<NavLink to="/sets" className="navItem nav__link">
   Сэты
-</Nav.Link>
-<Nav.Link to="/sause" className="navItem nav__link">
+</NavLink>
+<NavLink to="/sause" className="navItem nav__link">
   Соусы
-</Nav.Link>
+</NavLink>
 
 
                 </Nav>
-                <Form className="d-flex">
-                  <Form.Control
-                    type="search"
-                    placeholder="Search"
-                    className="me-2"
-                    aria-label="Search"
-                  />
-                  <Button variant="outline-success">Search</Button>
-                </Form>
+              
               </Offcanvas.Body>
             </Navbar.Offcanvas>
           </Container>

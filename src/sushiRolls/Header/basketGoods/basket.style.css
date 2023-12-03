@@ -40,3 +40,6 @@
   top: 0;
   background-color: red;
 }
+.navbar-toggler {
+  display: none;
+}
