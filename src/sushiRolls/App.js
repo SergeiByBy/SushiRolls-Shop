@@ -41,9 +41,10 @@ const App = () => {
   }
 
   function deleteItemFromCart(item) {
-    const itemIndex = cart.findIndex((cart) => cart.name === item.name);
+    const itemIndex = cart.find((cart) => cart.name === item.name);
+    console.log(itemIndex);
     const newCarts = [...cart];
-    setCart(newCarts.filter((cart) => cart.count));
+    // setCart(newCarts.findIndex((item)=>{return newCarts.name === item.name}), 1);
   }
 
   return (

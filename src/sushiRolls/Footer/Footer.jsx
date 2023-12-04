@@ -1,7 +1,6 @@
 import React from "react";
 import Logo from "../Header/Logo/Logo";
 import "./Footer.style.css";
-// import PolitSave from "./PolicalSave";
 import { Link } from "react-router-dom";
 const Footer = () => {
   return (
