@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { SushiStorage } from "./Sushi.Storage";
 import ButtonBack from "../../ButtonBack/ButtonBack";
 
-// comment for git
 const Rolls = ({ addItemToCart }) => {
   return (
     <div className="container">

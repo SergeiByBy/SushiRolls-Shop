@@ -18,13 +18,11 @@ import GunkansDetails from "./Menu/Gunkans/GunkansDetail";
 import SetsDetails from "./Menu/Sets/SetsDetails";
 import Sause from "./Menu/Sause/Sause";
 import SauseDetails from "./Menu/Sause/SauseDetails";
-import ScrollToTop from "./ScrollTop/SrollTop";
+import ScrollToTop from "./ScrollTop/SrollTop"; 
 import Cart from "./Cart/Cart";
 
 const App = () => {
   const [cart, setCart] = useState([]);
-  // const [lenthCart, setlengthCart] = useState(0);
-
  function addItemToCart(item) {
     let existingItem = cart.find((i) => i.name === item.name);
     if (existingItem) {
@@ -35,29 +33,18 @@ const App = () => {
     }
   }
 
-  function deleteItemFromCart(item) {
+  function minusItemFromCart(item) {
     const itemIndex = cart.findIndex((cart) => cart.name === item.name);
     const newCarts = [...cart];
     newCarts[itemIndex].count--;
     setCart(newCarts.filter((cart) => cart.count));
   }
 
-  // function minusElFroCart(item){
-  //   const minusItemEl = cart.find((cart) => cart.name === item.name);
-  //  if(minusItemEl){
-  //   console.log(minusElFroCart);
-  //   const newCarts = [...cart];
-  //   newCarts[minusItemEl].count--;
-  //   // setCart(newCarts.filter((cart) => cart.count));
-  //  }
-
-// function plusElFromCart(){
-//   const plusItemEl = cart.findIndex((cart) => cart.name === item.name);
-//   console.log(plusItemEl);
-// }
-
-  
-  console.log("Корзина", cart);
+  function deleteItemFromCart(item) {
+    const itemIndex = cart.findIndex((cart) => cart.name === item.name);
+    const newCarts = [...cart];
+    setCart(newCarts.filter((cart) => cart.count));
+  }
 
   return (
     <>
@@ -111,11 +98,9 @@ const App = () => {
             element={
               <Cart
                 cart={cart}
-                deleteItemFromCart={deleteItemFromCart}
+                minusItemFromCart={minusItemFromCart}
                 addItemToCart={addItemToCart}
-                // lenthCart={lenthCart}
-                // plusElFromCart={plusElFromCart}
-
+                deleteItemFromCart={deleteItemFromCart}
               />
             }
           />

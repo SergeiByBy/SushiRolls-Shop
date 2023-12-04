@@ -2,8 +2,16 @@ import React from "react";
 import "./Cart.style.css";
 import ButtonBack from "../ButtonBack/ButtonBack";
 
-const Cart = ({ cart, deleteItemFromCart, addItemToCart  }) => {
-const plusElFromCart = cart.reduce((acc,curr)=>acc+curr.price*curr.count,0)
+const Cart = ({
+  cart,
+  deleteItemFromCart,
+  addItemToCart,
+  minusItemFromCart,
+}) => {
+  const plusElFromCart = cart.reduce(
+    (acc, curr) => acc + curr.price * curr.count,
+    0
+  );
   return (
     <div className="container">
       <div className="cartBlock">
@@ -52,11 +60,17 @@ const plusElFromCart = cart.reduce((acc,curr)=>acc+curr.price*curr.count,0)
                             <td>
                               <span className="count">
                                 {" "}
-                                <span  onClick={()=>deleteItemFromCart(item)} className="change minus min">
+                                <span
+                                  onClick={() => minusItemFromCart(item)}
+                                  className="change minus min"
+                                >
                                   <span>-</span>
                                 </span>
-                              <span className="itemCount">{item.count}</span>
-                                <span onClick={()=>addItemToCart(item)} className="change plus">
+                                <span className="itemCount">{item.count}</span>
+                                <span
+                                  onClick={() => addItemToCart(item)}
+                                  className="change plus"
+                                >
                                   <span>+</span>
                                 </span>
                               </span>
@@ -65,6 +79,7 @@ const plusElFromCart = cart.reduce((acc,curr)=>acc+curr.price*curr.count,0)
                             <td>
                               {" "}
                               <button
+                                onClick={() => deleteItemFromCart()}
                                 className="btn"
                               >
                                 Удалить
@@ -85,11 +100,7 @@ const plusElFromCart = cart.reduce((acc,curr)=>acc+curr.price*curr.count,0)
                 </p>
                 <p>
                   <span className="h5">Итого:</span>{" "}
-                  <span
-                    className="total-price"
-                  >
-                    {plusElFromCart}
-                  </span>{" "}
+                  <span className="total-price">{plusElFromCart}</span>{" "}
                   <span className="rouble">₽</span>
                 </p>
               </div>
