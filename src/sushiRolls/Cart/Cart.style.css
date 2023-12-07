@@ -44,6 +44,9 @@ div tr {
 }
 .count {
   display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 .count .change {

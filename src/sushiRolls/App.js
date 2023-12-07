@@ -20,6 +20,7 @@ import Sause from "./Menu/Sause/Sause";
 import SauseDetails from "./Menu/Sause/SauseDetails";
 import ScrollToTop from "./ScrollTop/SrollTop";
 import Cart from "./Cart/Cart";
+import Snowfall from 'react-snowfall'
 
 const App = () => {
   const [cart, setCart] = useState([]);
@@ -32,6 +33,8 @@ const App = () => {
       setCart([...cart, { ...item, count: 1 }]);
     }
   }
+
+
 
   function minusItemFromCart(item) {
     const itemIndex = cart.findIndex((cart) => cart.name === item.name);
@@ -46,13 +49,14 @@ const App = () => {
 
   return (
     <>
+     <Snowfall />
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout cart={cart} />}>
           <Route index element={<Main />} />
           <Route
             path="rolls"
-            element={<Rolls addItemToCart={addItemToCart} />}
+            element={<Rolls minusItemFromCart={minusItemFromCart} cart={cart} addItemToCart={addItemToCart} />}
           />
           <Route
             path="rolls/:name"

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Cart.style.css";
 import ButtonBack from "../ButtonBack/ButtonBack";
-
+import Counter from "./Counter/Counter";
 const Cart = ({
   cart,
   deleteItemFromCart,
@@ -31,7 +31,7 @@ const Cart = ({
                       <tr>
                         <th></th>
                         <th>Наименование</th>
-                        <th>Вес</th>
+                        <th className="cartTableWeigth">Вес</th>
                         <th>Количество</th>
                         <th>Сумма</th>
                         <th>Удалить</th>
@@ -51,29 +51,19 @@ const Cart = ({
                               <img
                                 className="cartItemImg"
                                 src={item.src}
-                                alt=""
+                                alt="imgInCart"
                               />
                             </td>
-
                             <td>{item.name}</td>
-                            <td>{item.weigth} гр.</td>
+                            <td className="cartTableWeigth">{item.weigth} гр.</td>
                             <td>
-                              <span className="count">
-                                {" "}
-                                <span
-                                  onClick={() => minusItemFromCart(item)}
-                                  className="change minus min"
-                                >
-                                  <span>-</span>
-                                </span>
-                                <span className="itemCount">{item.count}</span>
-                                <span
-                                  onClick={() => addItemToCart(item)}
-                                  className="change plus"
-                                >
-                                  <span>+</span>
-                                </span>
-                              </span>
+                              <Counter
+                                addItemToCart={addItemToCart}
+                                minusItemFromCart={minusItemFromCart}
+                                itemCount={item.count}
+                                item={item}
+                                cart={cart.item}
+                              />
                             </td>
                             <td>{item.price * item.count} Р.</td>
                             <td>

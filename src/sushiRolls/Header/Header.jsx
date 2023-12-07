@@ -5,7 +5,7 @@ import Basket from "./basketGoods/Basket";
 import HeaderLine from "./headerLine";
 import NavigationBar from "./Nav/Nav";
 import { NavLink } from "react-router-dom";
-
+import Contacts from "./Contacts/Contacts";
 const Header = ({ cart }) => {
   window.onscroll = function () {
     scrollFunction();
@@ -21,8 +21,8 @@ const Header = ({ cart }) => {
     } else {
       document.getElementById("mainLogo").style.width = "100px";
       document.getElementById("mainLogo").style.height = "100px";
-      document.getElementById("header").style.paddingBottom = "25px";
-      document.getElementById("header").style.paddingTop = "25px";
+      document.getElementById("header").style.paddingBottom = "20px";
+      document.getElementById("header").style.paddingTop = "20px";
       document.getElementById("contactsHeader").style.display = "flex";
     }
   }
@@ -31,20 +31,7 @@ const Header = ({ cart }) => {
       <HeaderLine />
 
       <header id="header" className="header">
-        <div id="contactsHeader" className="contactsHeader">
-          <div className="phoneHeader">
-            <a href="tel:+79956542117">8 (995) 654-21-17 / 8 (900) 609-28-02</a>
-          </div>
-          <div className="mailHeader">
-            <a href="sushiskushai@yandex.ru">
-              sushiskushai@yandex.ru - Напишите нам
-            </a>
-          </div>
-          <div className="adressHeader">г. Рязань, ул. Октябрьская, д. 33 </div>
-          <div className="deliveryInfoHeader">
-            <strong>Доставка 12:00 - 21:30</strong>
-          </div>
-        </div>
+     <Contacts/>
         <div className="container header_container flex">
           <Logo />
           <NavigationBar />
@@ -71,6 +58,7 @@ const Header = ({ cart }) => {
               <NavLink to="/sause" className="navItem nav__link">
                 Соусы
               </NavLink>
+              <Contacts/>
             </div>
             <div className="hamburger-lines">
               <span className="line line1"></span>
