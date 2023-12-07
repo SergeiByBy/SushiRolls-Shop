@@ -10,6 +10,8 @@
   align-items: center;
   justify-content: center;
   padding: 0 40px;
+  width: 100%;
+  display: flex;
 }
 
 .header__items {
@@ -41,9 +43,8 @@
 }
 
 .menu {
-opacity: 0;
-    transition: all .5s ease;
-
+  opacity: 0;
+  transition: all 0.5s ease;
 }
 
 /* ///////////////////////////////// */

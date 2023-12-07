@@ -20,7 +20,7 @@ const NavigationBar = () => {
               Суши
             </NavLink>
             <NavLink to="/sets" className="navItem nav__link">
-              Сэты
+              Сеты
             </NavLink>
             <NavLink to="/sause" className="navItem nav__link">
               Соусы

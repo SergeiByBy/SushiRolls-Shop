@@ -43,7 +43,7 @@ const Cart = ({
                   <h2 className="BasketEmptyDescr">Корзина пуста</h2>
                 ) : (
                   cart.map((item) => (
-                    <div className="cartItem" key={item.name}>
+                    <div className="cartItem" key={item.id}>
                       <table>
                         <tbody>
                           <tr>
@@ -75,11 +75,11 @@ const Cart = ({
                                 </span>
                               </span>
                             </td>
-                            <td>{item.price} Р.</td>
+                            <td>{item.price * item.count} Р.</td>
                             <td>
                               {" "}
                               <button
-                                onClick={() => deleteItemFromCart()}
+                                onClick={() => deleteItemFromCart(item)}
                                 className="btn"
                               >
                                 Удалить

@@ -1,9 +1,9 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Main from "./Main/Main";
 import "./Style//Normalize.style.css";
 import "./Style/style.css";
-import "./Style/media.style.css"
+import "./Style/media.style.css";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./Layout";
 import Rolls from "./Menu/Rolls/Rolls";
@@ -18,12 +18,12 @@ import GunkansDetails from "./Menu/Gunkans/GunkansDetail";
 import SetsDetails from "./Menu/Sets/SetsDetails";
 import Sause from "./Menu/Sause/Sause";
 import SauseDetails from "./Menu/Sause/SauseDetails";
-import ScrollToTop from "./ScrollTop/SrollTop"; 
+import ScrollToTop from "./ScrollTop/SrollTop";
 import Cart from "./Cart/Cart";
 
 const App = () => {
   const [cart, setCart] = useState([]);
- function addItemToCart(item) {
+  function addItemToCart(item) {
     let existingItem = cart.find((i) => i.name === item.name);
     if (existingItem) {
       existingItem.count++;
@@ -37,14 +37,11 @@ const App = () => {
     const itemIndex = cart.findIndex((cart) => cart.name === item.name);
     const newCarts = [...cart];
     newCarts[itemIndex].count--;
-    setCart(newCarts.filter((cart) => cart.count));
+    const MinusElem = newCarts.filter((cart) => cart.count);
+    setCart(MinusElem);
   }
-
   function deleteItemFromCart(item) {
-    const itemIndex = cart.find((cart) => cart.name === item.name);
-    console.log(itemIndex);
-    const newCarts = [...cart];
-    // setCart(newCarts.findIndex((item)=>{return newCarts.name === item.name}), 1);
+    setCart([...cart].filter((cartItem) => cartItem.name !== item.name));
   }
 
   return (
@@ -110,6 +107,6 @@ const App = () => {
       </Routes>
     </>
   );
-}
+};
 
 export default App;

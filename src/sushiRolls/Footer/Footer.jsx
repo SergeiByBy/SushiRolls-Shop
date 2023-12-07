@@ -1,7 +1,7 @@
 import React from "react";
 import Logo from "../Header/Logo/Logo";
 import "./Footer.style.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 const Footer = () => {
   return (
     <footer>
@@ -165,13 +165,13 @@ const Footer = () => {
             <h2>О продукте</h2>
             <ul>
               <li>
-                <a href=".">Продуктовая пора</a>
+                <NavLink to=".">Производство</NavLink>
               </li>
               <li>
-                <a href=".">Статья про хрень</a>
+                <NavLink to=".">Сертификация</NavLink>
               </li>
               <li>
-                <a href=".">Статья про хрень</a>
+                <NavLink to=".">Качество</NavLink>
               </li>
             </ul>
           </div>
@@ -179,13 +179,13 @@ const Footer = () => {
             <h2>О компании</h2>
             <ul>
               <li>
-                <a href=".">Продуктовая пора</a>
+                <NavLink to=".">Доставка</NavLink>
               </li>
               <li>
-                <a href=".">Статья про хрень</a>
+                <NavLink to=".">Вакансии</NavLink>
               </li>
               <li>
-                <a href=".">Статья про хрень</a>
+                <NavLink to=".">Контакты</NavLink>
               </li>
             </ul>
           </div>
@@ -193,13 +193,13 @@ const Footer = () => {
             <h2>Рекомендации</h2>
             <ul>
               <li>
-                <a href=".">Продуктовая пора</a>
+                <NavLink to=".">Отзывы</NavLink>
               </li>
               <li>
-                <a href=".">Статья про хрень</a>
+                <NavLink to=".">Как заказать</NavLink>
               </li>
               <li>
-                <a href=".">Статья про хрень</a>
+                <NavLink to=".">Акции</NavLink>
               </li>
             </ul>
           </div>

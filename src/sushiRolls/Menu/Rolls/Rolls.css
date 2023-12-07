@@ -79,7 +79,7 @@
   font-size: 300%;
   text-align: center;
   margin-bottom: 50px;
-  margin-top: 200px;
+  margin-top: 300px;
 }
 .box-descr {
   height: 100%;
@@ -133,7 +133,7 @@
 }
 .btnGoBack {
   position: absolute;
-  top: 140px;
+  top: 260px;
 }
 .box-descr__details {
   display: flex;
