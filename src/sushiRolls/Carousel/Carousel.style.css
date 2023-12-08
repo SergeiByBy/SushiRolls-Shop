@@ -44,8 +44,9 @@
 }
 .carousel {
   max-width: 1200px;
-  padding-top: 285px;
+  padding-top: 250px;
 }
+
 .ImgCarousel {
   width: 100%;
   height: 250px;
@@ -71,4 +72,11 @@
 }
 .carousel-control-prev-icon {
   justify-content: right;
+}
+.informSmBlock {
+  padding-top: 180px;
+  display: none;
+}
+.informSmBlock a {
+  color: black !important;
 }

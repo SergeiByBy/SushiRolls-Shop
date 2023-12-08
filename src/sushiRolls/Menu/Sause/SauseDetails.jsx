@@ -1,36 +1,54 @@
 import React from "react";
 import "../Rolls/Rolls.css";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { SauseStorage } from "./SauseStorage";
 import ButtonBack from "../../ButtonBack/ButtonBack";
+import Counter from "../../Cart/Counter/Counter";
 
-const SauseDetails = ({addItemToCart}) => {
-  
+const SauseDetails = ({ addItemToCart, cart, minusItemFromCart }) => {
   const nameEl = useParams();
-  const findEl = SauseStorage.find((element) =>
+  const item = SauseStorage.find((element) =>
     element.name === nameEl.name ? element : ""
   );
+
   return (
     <div className="container">
-      <ButtonBack/>
-   
+      <ButtonBack />
       <div className="box__details">
         <div className="box__details__img">
-          <img src={findEl.src} alt="img" />
+          <img src={item.src} alt="img" />
         </div>
         <div className="box-descr__details">
-          <h2>{findEl.name}</h2>
+          <h2>{item.name}</h2>
 
           <div className="box-descr__composition">
             <h4>Состав</h4>
-            <p className="">{findEl.structure}</p>
+            <p className="">{item.structure}</p>
           </div>
-          <div className="dish__weight">{findEl.weigth} гр.</div>
+          <div className="dish__parent">
+            Входит в состав сета{" "}
+            <Link className="dish__parent-link" to="/Sets">
+              Премиум сет
+            </Link>
+          </div>
+          <div className="dish__weight">{item.weigth} гр.</div>
           <div className="box-descr__details-structure">
-            <span>{findEl.price} ₽.</span>
-            <button onClick={() => addItemToCart(findEl)}  type="button" className=" primary btn">
-              В корзину
-            </button>
+            <span>{item.price} ₽.</span>
+            {cart.find((cartItem) => cartItem.name === item.name) ? (
+              <Counter
+                itemCount={
+                  cart.find((cartItem) => cartItem.name === item.name).count
+                }
+                cart={cart}
+                item={item}
+                addItemToCart={addItemToCart}
+                minusItemFromCart={minusItemFromCart}
+              />
+            ) : (
+              <button type="button" onClick={() => addItemToCart(item)}>
+                Добавить в корзину
+              </button>
+            )}
           </div>
         </div>
       </div>

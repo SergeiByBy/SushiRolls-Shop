@@ -57,8 +57,10 @@
 .box-descr_button {
   width: 100%;
   display: flex;
+  height: 20%;
 }
-.box-descr_button button {
+.box-descr_button button,
+.box-descr__details-structure button {
   width: 100%;
   cursor: pointer;
   height: 45px;
@@ -67,6 +69,18 @@
   background-color: var(--redColor);
   transition: all 0.3s ease;
   color: white;
+}
+.box-descr__details-structure .itemCount {
+  height: 30px;
+  background-color: rgb(231, 222, 222) !important;
+}
+.box-descr__details-structure button {
+  width: 50%;
+}
+.box-descr__details-structure .count .change {
+  width: 30px;
+  height: 30px;
+  padding-right: 9px;
 }
 .box-descr_button button:hover {
   transform: scale(103%);
@@ -112,7 +126,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
-  gap: 30px;
+  gap: 50px;
   padding: 50px;
   margin-top: 350px;
   margin-bottom: 140px;
@@ -154,6 +168,7 @@
 }
 .box-descr__details-structure span {
   font-size: 2rem;
+  width: 30%;
 }
 .box-descr__composition p {
   font-family: Roboto, sans-serif;
@@ -366,7 +381,7 @@
   width: 100%;
   height: 100%;
   border-radius: 30px;
-  color: black  ;
+  color: black;
   margin: 0;
   text-align: center;
   display: flex;

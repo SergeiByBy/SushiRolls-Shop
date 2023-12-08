@@ -28,7 +28,7 @@
   text-align: center;
   color: white;
   border-radius: 50%;
-  border: 1px solid rgb(255, 255, 255);
+  border: 2px solid var(--redColor);
   width: 25px;
   height: 25px;
   top: -8px;

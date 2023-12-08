@@ -20,7 +20,7 @@ import Sause from "./Menu/Sause/Sause";
 import SauseDetails from "./Menu/Sause/SauseDetails";
 import ScrollToTop from "./ScrollTop/SrollTop";
 import Cart from "./Cart/Cart";
-import Snowfall from 'react-snowfall'
+import Snowfall from "react-snowfall";
 
 const App = () => {
   const [cart, setCart] = useState([]);
@@ -33,8 +33,6 @@ const App = () => {
       setCart([...cart, { ...item, count: 1 }]);
     }
   }
-
-
 
   function minusItemFromCart(item) {
     const itemIndex = cart.findIndex((cart) => cart.name === item.name);
@@ -49,51 +47,120 @@ const App = () => {
 
   return (
     <>
-     <Snowfall />
+      <Snowfall />
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout cart={cart} />}>
           <Route index element={<Main />} />
           <Route
             path="rolls"
-            element={<Rolls minusItemFromCart={minusItemFromCart} cart={cart} addItemToCart={addItemToCart} />}
+            element={
+              <Rolls
+                minusItemFromCart={minusItemFromCart}
+                cart={cart}
+                addItemToCart={addItemToCart}
+              />
+            }
           />
           <Route
             path="rolls/:name"
-            element={<RollDetail addItemToCart={addItemToCart} />}
+            element={
+              <RollDetail
+                minusItemFromCart={minusItemFromCart}
+                cart={cart}
+                addItemToCart={addItemToCart}
+              />
+            }
           />
           <Route
             path="sushi"
-            element={<Sushi addItemToCart={addItemToCart} />}
+            element={
+              <Sushi
+                minusItemFromCart={minusItemFromCart}
+                cart={cart}
+                addItemToCart={addItemToCart}
+              />
+            }
           />
           <Route
             path="sushi/:name"
-            element={<SushiDetails addItemToCart={addItemToCart} />}
+            element={
+              <SushiDetails
+                minusItemFromCart={minusItemFromCart}
+                cart={cart}
+                addItemToCart={addItemToCart}
+              />
+            }
           />
           <Route
             path="gunkans"
-            element={<Gunkans addItemToCart={addItemToCart} />}
+            element={
+              <Gunkans
+                minusItemFromCart={minusItemFromCart}
+                cart={cart}
+                addItemToCart={addItemToCart}
+              />
+            }
           />
           <Route
             path="gunkans/:name"
-            element={<GunkansDetails addItemToCart={addItemToCart} />}
+            element={
+              <GunkansDetails
+                minusItemFromCart={minusItemFromCart}
+                cart={cart}
+                addItemToCart={addItemToCart}
+              />
+            }
           />
-          <Route path="sets" element={<Sets addItemToCart={addItemToCart} />} />
+          <Route
+            path="sets"
+            element={
+              <Sets
+                minusItemFromCart={minusItemFromCart}
+                cart={cart}
+                addItemToCart={addItemToCart}
+              />
+            }
+          />
           <Route
             path="sets/:name"
-            element={<SetsDetails addItemToCart={addItemToCart} />}
+            element={
+              <SetsDetails
+                minusItemFromCart={minusItemFromCart}
+                cart={cart}
+                addItemToCart={addItemToCart}
+              />
+            }
           />
           <Route
             path="sause"
-            element={<Sause addItemToCart={addItemToCart} />}
+            element={
+              <Sause
+                minusItemFromCart={minusItemFromCart}
+                cart={cart}
+                addItemToCart={addItemToCart}
+              />
+            }
           />
           <Route
             path="sause/:name"
-            element={<SauseDetails addItemToCart={addItemToCart} />}
+            element={
+              <SauseDetails
+                minusItemFromCart={minusItemFromCart}
+                cart={cart}
+                addItemToCart={addItemToCart}
+              />
+            }
           />
           <Route
             path="PolitSave"
-            element={<PolitSave addItemToCart={addItemToCart} />}
+            element={
+              <PolitSave
+                minusItemFromCart={minusItemFromCart}
+                cart={cart}
+                addItemToCart={addItemToCart}
+              />
+            }
           />
           <Route
             path="Cart"

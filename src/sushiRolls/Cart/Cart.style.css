@@ -63,6 +63,9 @@ div tr {
 }
 
 .count .itemCount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 55px;
   text-align: center;
   font-weight: 700;

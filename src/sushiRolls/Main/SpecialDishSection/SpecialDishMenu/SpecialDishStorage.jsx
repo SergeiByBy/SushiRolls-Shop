@@ -1,12 +1,13 @@
 import img1 from "../../../Menu/Sets/SetsImg/6tantzh716w7cg1wvtqw5k7pv3ojov2d.webp";
 import img2 from "../../../Menu/Sets/SetsImg/q1xbx6op70ia2r1xc17p7bsata208u4k.webp";
 import img3 from "../../../Menu/Sets/SetsImg/rwe1b8zx99bac5ww4x59pgtggt3vvxla.webp";
+import img4 from "../../../Menu/Sets/SetsImg/freidSet.webp";
 
 export const SpecialDishStorage = [
   {
     name: "ДРАКОН",
     structure: "Дракон, Королевский, Калифорния с крабом, Унаги урамаки, Такао",
-    price: 2299,    
+    price: 2299,
     src: img1,
     priceNew: 1899,
     id: 1,
@@ -27,7 +28,15 @@ export const SpecialDishStorage = [
     price: 1299,
     src: img3,
     priceNew: 999,
-
     id: 3,
+  },
+  {
+    name: "ФЬЮЖН СЕТ",
+    structure:
+      "Фьюжн, Запеченный Дуэт, Унаги Хот Спайс, Унаги Урамаки, Тобикири,  Император с лососем",
+    price: 1499,
+    src: img4,
+    priceNew: 999,
+    id: 4,
   },
 ];

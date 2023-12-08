@@ -1,6 +1,5 @@
-.HeroImgPatent  {
-   margin: 0 auto;
-}
-.HeroImgPatent img {
-   margin: 0 auto;
+.HeroImgPatent {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }

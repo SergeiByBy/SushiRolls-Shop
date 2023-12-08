@@ -3,7 +3,7 @@
   height: 50px;
   background-color: var(--redColor);
   border: none;
-  border-radius: 15px;
+  border-radius: 30px;
   color: var(--whiteColor);
   font-size: 100%;
   cursor: pointer;
@@ -17,11 +17,10 @@
   height: 50px;
   background-color: var(--redColor);
   border: none;
-  border-radius: 15px;
+  border-radius: 30px;
   font-size: 100%;
   cursor: pointer;
   transition: transform 0.3s ease;
-
 }
 .btn:active {
   color: var(--whiteColor);

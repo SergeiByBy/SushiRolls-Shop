@@ -14,6 +14,11 @@
 }
 
 @media (max-width: 1024px) {
+  .SpecialDishMenu_box {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 60px;
+  }
   .ImgCarousel {
     height: 210px;
   }
@@ -37,14 +42,30 @@
 }
 
 @media (max-width: 992px) {
+  .SpecialDishMenu_descr p {
+    font-size: 85%;
+    line-height: normal;
+  }
+  .SpecialDishMenu_card {
+    max-height: 470px;
+  }
+  .SpecialDishMenu_box {
+    gap: 24px;
+  }
+  .carousel {
+    padding-top: 235px;
+  }
+  .informSmBlock {
+    display: flex;
+  }
   .cartTableWeigth {
-    display: none!important;
+    display: none !important;
   }
   .cartItemsHeader {
-    padding: 0!important;
+    padding: 0 !important;
   }
   .cartItem {
-    padding: 0!important;
+    padding: 0 !important;
   }
   .RollsTitle {
     margin-top: 225px !important;
@@ -78,6 +99,7 @@
   }
   .checkbox:checked + .menu {
     opacity: 1;
+    left: 0;
     animation: display 2s ease;
     justify-content: space-between;
   }
@@ -111,6 +133,7 @@
   }
   .hero_container {
     gap: 50px;
+    align-items: center;
   }
   .SpecialDishMenu_pay div {
     width: 100%;
@@ -127,7 +150,7 @@
     transition: all 1s ease;
     position: fixed;
     top: 0;
-    left: 0;
+    left: -300px;
     height: 100vh;
     background: rgba(21, 20, 20, 0.95);
     width: 50%;
@@ -152,6 +175,9 @@
   }
 }
 @media (max-width: 800px) {
+  .SpecialDishMenu_desc {
+    padding: 5px;
+  }
   .ImgCarousel {
     height: 180px;
   }
@@ -165,6 +191,20 @@
 }
 
 @media (max-width: 768px) {
+  .chefsBlock img {
+    height: 60%;
+    width: 60%;
+  }
+
+  .hero_container {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+  }
+  .SpecialDishMenu_box {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
   .ImgCarousel {
     height: 160px;
   }
@@ -206,5 +246,15 @@
     100% {
       opacity: 1;
     }
+  }
+}
+@media (max-width: 600px) {
+  .SpecialDishMenu_box {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(1fr, 3);
+    padding: 30px;
+  }
+  .SpecialDishMenu_card {
+    max-height: 560px;
   }
 }

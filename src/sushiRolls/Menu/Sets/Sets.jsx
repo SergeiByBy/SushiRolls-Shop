@@ -4,8 +4,9 @@ import "../../Style/media.style.css"
 import { Link } from "react-router-dom";
 import { SetsStorage } from "./SetsStorage";
 import ButtonBack from "../../ButtonBack/ButtonBack";
+import Counter from "../../Cart/Counter/Counter";
 
-const Sets = ({addItemToCart}) => {
+const Sets = ({addItemToCart, cart, minusItemFromCart}) => {
   return (
     <div className="container">
       <ButtonBack />
@@ -28,8 +29,23 @@ const Sets = ({addItemToCart}) => {
                   <h3>{item.name}</h3>
                   <p className="box-descr__structure">{item.structure}</p>
 
-                  <div className="box-descr_button">
-                    <button onClick={() => addItemToCart(item)} type="button">В корзину</button>
+                    <div className="box-descr_button">
+                    {cart.find((cartItem) => cartItem.name === item.name) ? (
+                      <Counter
+                        itemCount={
+                          cart.find((cartItem) => cartItem.name === item.name)
+                            .count
+                        }
+                        cart={cart}
+                        item={item}
+                        addItemToCart={addItemToCart}
+                        minusItemFromCart={minusItemFromCart}
+                      />
+                    ) : (
+                      <button type="button" onClick={() => addItemToCart(item)}>
+                        Добавить в корзину
+                      </button>
+                    )}
                   </div>
                 </div>
               </div>

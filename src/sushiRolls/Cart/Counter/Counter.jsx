@@ -2,7 +2,6 @@ import "../Cart.style.css";
 import React from "react";
 
 const Counter = ({ minusItemFromCart, addItemToCart, itemCount, item }) => {
-  console.log(item);
   return (
     <span className="count">
       <span

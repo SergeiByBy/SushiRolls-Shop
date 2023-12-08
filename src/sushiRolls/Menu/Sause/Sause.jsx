@@ -1,13 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "../Rolls/Rolls.css";
 import { Link } from "react-router-dom";
 import { SauseStorage } from "./SauseStorage";
 import ButtonBack from "../../ButtonBack/ButtonBack";
+import Counter from "../../Cart/Counter/Counter";
 
-const Sause = ({addItemToCart}) => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+const Sause = ({ addItemToCart, cart, minusItemFromCart }) => {
   return (
     <div className="container">
       <ButtonBack />
@@ -31,7 +29,22 @@ const Sause = ({addItemToCart}) => {
                   <p className="box-descr__structure">{item.structure}</p>
 
                   <div className="box-descr_button">
-                    <button onClick={() => addItemToCart(item)}  type="button">В корзину</button>
+                    {cart.find((cartItem) => cartItem.name === item.name) ? (
+                      <Counter
+                        itemCount={
+                          cart.find((cartItem) => cartItem.name === item.name)
+                            .count
+                        }
+                        cart={cart}
+                        item={item}
+                        addItemToCart={addItemToCart}
+                        minusItemFromCart={minusItemFromCart}
+                      />
+                    ) : (
+                      <button type="button" onClick={() => addItemToCart(item)}>
+                        Добавить в корзину
+                      </button>
+                    )}
                   </div>
                 </div>
               </div>

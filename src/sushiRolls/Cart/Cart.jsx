@@ -55,7 +55,9 @@ const Cart = ({
                               />
                             </td>
                             <td>{item.name}</td>
-                            <td className="cartTableWeigth">{item.weigth} гр.</td>
+                            <td className="cartTableWeigth">
+                              {item.weigth} гр.
+                            </td>
                             <td>
                               <Counter
                                 addItemToCart={addItemToCart}
