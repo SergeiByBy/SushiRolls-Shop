@@ -26,7 +26,7 @@
   margin-right: 50px;
 }
 
-[for="burger"] {
+[htmlFor="burger"] {
   display: block;
 }
 #burger,
@@ -45,6 +45,9 @@
 .menu {
   opacity: 0;
   transition: all 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 /* ///////////////////////////////// */

@@ -1,6 +1,10 @@
 .flex {
   display: flex;
 }
+.open {
+  left: 300px;
+  opacity: 1;
+}
 .header {
   display: flex;
   flex-direction: column;
@@ -26,7 +30,7 @@
 .header_container {
   align-items: center;
   justify-content: center;
-  padding: 0 40px;
+  padding: 0 80px;
 }
 .list-reset,
 .navItem {
@@ -50,10 +54,13 @@
   height: 60px;
   padding-left: 24px;
 }
+.overlay {
+  left: 0;
+}
 .menu .navItem {
   margin: 0;
   margin: -50px 0;
-  font-size: 160%;
+  font-size: 200%;
 }
 .mailHeader a::before {
   content: "@";

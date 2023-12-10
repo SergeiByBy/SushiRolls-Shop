@@ -10,3 +10,14 @@
   font-size: 140%;
   padding-top: 30px;
 }
+.adressMap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.map div,
+.map div a,
+.map div a::before,
+.map div a::after {
+  color: black;
+}
