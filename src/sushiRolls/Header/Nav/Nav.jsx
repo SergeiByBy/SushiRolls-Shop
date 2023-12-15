@@ -8,7 +8,7 @@ const NavigationBar = () => {
         <div className="header__container">
           <nav>
             <NavLink to="/" className="navItem nav__link">
-              Главнаяfsdfsdfdsf
+              Главная
             </NavLink>
             <NavLink to="/rolls" className="navItem nav__link">
               Роллы
