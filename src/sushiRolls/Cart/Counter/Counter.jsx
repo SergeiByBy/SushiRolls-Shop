@@ -20,7 +20,7 @@ import React from "react";
 
 // export default Counter;
 import { useDispatch, useSelector } from "react-redux";
-import {additem, delItem } from "../../cartSlice";
+import {addItem, delItem } from "../../cartSlice";
 
 const Counter = () => {
   const dispatch = useDispatch();
@@ -28,12 +28,13 @@ const Counter = () => {
   return (
     <span className="count">
       <span
-        onClick={() => dispatch(additem())}
+        onClick={() => dispatch(addItem())}
         className="change minus min"
       >
         <span>-</span>
       </span>
-      <span className="itemCount">{itemCount}</span>
+      {/* <span className="itemCount">{itemCount}</span> */}
+      <h1>{itemCount}</h1>
       <span onClick={() => dispatch(delItem())} className="change plus">
         <span>+</span>
       </span>
