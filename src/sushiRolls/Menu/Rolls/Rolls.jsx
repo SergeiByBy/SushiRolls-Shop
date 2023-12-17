@@ -4,7 +4,12 @@ import { Link } from "react-router-dom";
 import { RollsStorage } from "./Rolls.Storage";
 import ButtonBack from "../../ButtonBack/ButtonBack";
 import Counter from "../../Cart/Counter/Counter";
-const Rolls = ({ addItemToCart, cart, minusItemFromCart }) => {
+import { useDispatch, useSelector } from "react-redux";
+import { addItemToCart } from "../../cartSlice";
+
+const Rolls = () => {
+  const dispatch = useDispatch();
+  const cart = useSelector(state=>state.cart.cart)
   return (
     <div className="container">
       <ButtonBack />
@@ -30,13 +35,10 @@ const Rolls = ({ addItemToCart, cart, minusItemFromCart }) => {
                           cart.find((cartItem) => cartItem.name === item.name)
                             .count
                         }
-                        cart={cart}
-                        item={item}
-                        addItemToCart={addItemToCart}
-                        minusItemFromCart={minusItemFromCart}
+                      
                       />
                     ) : (
-                      <button type="button" onClick={() => addItemToCart(item)}>
+                      <button type="button" onClick={() => dispatch(addItemToCart(item))}>
                         Добавить в корзину
                       </button>
                     )}
