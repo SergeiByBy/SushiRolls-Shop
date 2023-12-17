@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Main from "./Main/Main";
 import "./Style//Normalize.style.css";

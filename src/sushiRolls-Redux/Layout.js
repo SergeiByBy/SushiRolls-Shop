@@ -4,7 +4,7 @@ import Footer from "./Footer/Footer";
 import { Outlet } from "react-router-dom";
 import ScrollToTop from "react-scroll-to-top";
 
-const Layout = ({cart}) => {
+const Layout = () => {
   return (
     <>
       <Header  />
