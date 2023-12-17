@@ -23,42 +23,39 @@ import Cart from "./Cart/Cart";
 import Snowfall from "react-snowfall";
 
 const App = () => {
-  const [cart, setCart] = useState([]);
-  function addItemToCart(item) {
-    let existingItem = cart.find((i) => i.name === item.name);
-    if (existingItem) {
-      existingItem.count++;
-      setCart([...cart]);
-    } else {
-      setCart([...cart, { ...item, count: 1 }]);
-    }
-  }
+  // const [cart, setCart] = useState([]);
+  // function addItemToCart(item) {
+  //   let existingItem = cart.find((i) => i.name === item.name);
+  //   if (existingItem) {
+  //     existingItem.count++;
+  //     setCart([...cart]);
+  //   } else {
+  //     setCart([...cart, { ...item, count: 1 }]);
+  //   }
+  // }
 
-  function minusItemFromCart(item) {
-    const itemIndex = cart.findIndex((cart) => cart.name === item.name);
-    const newCarts = [...cart];
-    newCarts[itemIndex].count--;
-    const MinusElem = newCarts.filter((cart) => cart.count);
-    setCart(MinusElem);
-  }
-  function deleteItemFromCart(item) {
-    setCart([...cart].filter((cartItem) => cartItem.name !== item.name));
-  }
+  // function minusItemFromCart(item) {
+  //   const itemIndex = cart.findIndex((cart) => cart.name === item.name);
+  //   const newCarts = [...cart];
+  //   newCarts[itemIndex].count--;
+  //   const MinusElem = newCarts.filter((cart) => cart.count);
+  //   setCart(MinusElem);
+  // }
+  // function deleteItemFromCart(item) {
+  //   setCart([...cart].filter((cartItem) => cartItem.name !== item.name));
+  // }
 
   return (
     <>
       <Snowfall />
       <ScrollToTop />
       <Routes>
-        <Route path="/" element={<Layout cart={cart} />}>
+        <Route path="/" element={<Layout  />}>
           <Route index element={<Main />} />
           <Route
             path="rolls"
             element={
               <Rolls
-                minusItemFromCart={minusItemFromCart}
-                cart={cart}
-                addItemToCart={addItemToCart}
               />
             }
           />
@@ -66,9 +63,6 @@ const App = () => {
             path="rolls/:name"
             element={
               <RollDetail
-                minusItemFromCart={minusItemFromCart}
-                cart={cart}
-                addItemToCart={addItemToCart}
               />
             }
           />
@@ -76,9 +70,6 @@ const App = () => {
             path="sushi"
             element={
               <Sushi
-                minusItemFromCart={minusItemFromCart}
-                cart={cart}
-                addItemToCart={addItemToCart}
               />
             }
           />
@@ -86,9 +77,6 @@ const App = () => {
             path="sushi/:name"
             element={
               <SushiDetails
-                minusItemFromCart={minusItemFromCart}
-                cart={cart}
-                addItemToCart={addItemToCart}
               />
             }
           />
@@ -96,9 +84,6 @@ const App = () => {
             path="gunkans"
             element={
               <Gunkans
-                minusItemFromCart={minusItemFromCart}
-                cart={cart}
-                addItemToCart={addItemToCart}
               />
             }
           />
@@ -106,9 +91,6 @@ const App = () => {
             path="gunkans/:name"
             element={
               <GunkansDetails
-                minusItemFromCart={minusItemFromCart}
-                cart={cart}
-                addItemToCart={addItemToCart}
               />
             }
           />
@@ -116,9 +98,6 @@ const App = () => {
             path="sets"
             element={
               <Sets
-                minusItemFromCart={minusItemFromCart}
-                cart={cart}
-                addItemToCart={addItemToCart}
               />
             }
           />
@@ -126,9 +105,6 @@ const App = () => {
             path="sets/:name"
             element={
               <SetsDetails
-                minusItemFromCart={minusItemFromCart}
-                cart={cart}
-                addItemToCart={addItemToCart}
               />
             }
           />
@@ -136,9 +112,6 @@ const App = () => {
             path="sause"
             element={
               <Sause
-                minusItemFromCart={minusItemFromCart}
-                cart={cart}
-                addItemToCart={addItemToCart}
               />
             }
           />
@@ -146,9 +119,6 @@ const App = () => {
             path="sause/:name"
             element={
               <SauseDetails
-                minusItemFromCart={minusItemFromCart}
-                cart={cart}
-                addItemToCart={addItemToCart}
               />
             }
           />
@@ -156,9 +126,6 @@ const App = () => {
             path="PolitSave"
             element={
               <PolitSave
-                minusItemFromCart={minusItemFromCart}
-                cart={cart}
-                addItemToCart={addItemToCart}
               />
             }
           />
@@ -166,10 +133,6 @@ const App = () => {
             path="Cart"
             element={
               <Cart
-                cart={cart}
-                minusItemFromCart={minusItemFromCart}
-                addItemToCart={addItemToCart}
-                deleteItemFromCart={deleteItemFromCart}
               />
             }
           />

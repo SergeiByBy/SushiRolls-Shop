@@ -7,7 +7,7 @@ import ScrollToTop from "react-scroll-to-top";
 const Layout = ({cart}) => {
   return (
     <>
-      <Header cart={cart} />
+      <Header  />
       <main>
         <Outlet />
       </main>
