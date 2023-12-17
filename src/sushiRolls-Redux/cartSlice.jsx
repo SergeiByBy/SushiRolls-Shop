@@ -4,7 +4,9 @@ const cartSlice = createSlice({
   name: "cart",
   initialState: [],
   reducers: {
-    addItem: (state) => state + 1,
+    addItemToCart(){
+       const existingItem = state.find()
+    },
     delItem: (state) => state - 1,
   },
 });
