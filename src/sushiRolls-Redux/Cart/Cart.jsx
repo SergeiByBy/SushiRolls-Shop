@@ -3,12 +3,10 @@ import "./Cart.style.css";
 import ButtonBack from "../ButtonBack/ButtonBack";
 import Counter from "./Counter/Counter";
 import ModalCart from "./ModalCart/ModalCart";
-const Cart = ({
-  cart,
-  deleteItemFromCart,
-  addItemToCart,
-  minusItemFromCart,
-}) => {
+import { useSelector } from "react-redux";
+
+const Cart = () => {
+  const cart = useSelector((state)=>state.cart.cart)
   const plusElFromCart = cart.reduce(
     (acc, curr) => acc + curr.price * curr.count,
     0
@@ -86,22 +84,17 @@ const Cart = ({
                             </td>
                             <td>
                               <Counter
-                                addItemToCart={addItemToCart}
-                                minusItemFromCart={minusItemFromCart}
-                                itemCount={item.count}
-                                item={item}
-                                cart={cart.item}
                               />
                             </td>
                             <td>{item.price * item.count} Р.</td>
                             <td>
                               {" "}
-                              <button
+                              {/* <button
                                 onClick={() => deleteItemFromCart(item)}
                                 className="btn"
                               >
                                 Удалить
-                              </button>
+                              </button> */}
                             </td>
                           </tr>
                         </tbody>

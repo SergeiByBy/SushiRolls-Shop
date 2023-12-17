@@ -4,8 +4,12 @@ import { useParams, Link } from "react-router-dom";
 import { RollsStorage } from "./Rolls.Storage";
 import ButtonBack from "../../ButtonBack/ButtonBack";
 import Counter from "../../Cart/Counter/Counter";
+import { useSelector, useDispatch } from "react-redux";
+import { addItemToCart } from "../../cartSlice";
 
-const RollDetail = ({ addItemToCart, cart, minusItemFromCart }) => {
+const RollDetail = () => {
+  const dispatch = useDispatch();
+  const cart = useSelector((state)=>state.cart.cart)
   const nameEl = useParams();
   const item = RollsStorage.find((element) =>
     element.name === nameEl.name ? element : ""
@@ -39,13 +43,10 @@ const RollDetail = ({ addItemToCart, cart, minusItemFromCart }) => {
                 itemCount={
                   cart.find((cartItem) => cartItem.name === item.name).count
                 }
-                cart={cart}
-                item={item}
-                addItemToCart={addItemToCart}
-                minusItemFromCart={minusItemFromCart}
+             
               />
             ) : (
-              <button type="button" onClick={() => addItemToCart(item)}>
+              <button type="button" onClick={() => dispatch(addItemToCart())}>
                 Добавить в корзину
               </button>
             )}

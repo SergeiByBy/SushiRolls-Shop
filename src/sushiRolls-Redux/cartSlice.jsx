@@ -6,13 +6,18 @@ const cartSlice = createSlice({
     cart: []
   },
   reducers: {
-    addItemToCart(){
-      const { action.payload: item} = actions;
-       const existingItem = state.cart.find(i=>i.name===  item.name)
-    },Ы
-    // delItem: (state) => state - 1,
+    addItemToCart(state, actions){
+    const {payload: item } = actions;
+    const existingItem = state.cart.find((i)=>i.name === item.name);
+    if (existingItem) {
+      existingItem.count++;
+    }
+    else {
+      state.cart.push({...item, count:1})
+    }
+    }
   },
 });
 
-export const { addItem, delItem } = cartSlice.actions;
+export const { addItemToCart } = cartSlice.actions;
 export default cartSlice.reducer;

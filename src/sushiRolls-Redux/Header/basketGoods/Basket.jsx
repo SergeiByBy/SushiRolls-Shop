@@ -3,8 +3,7 @@ import "./basket.style.css";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 const Basket = () => {
-  const cart = useSelector(state=>state.cart)
-  console.log(cart);
+  const cart = useSelector(state=>state.cart.cart)
   const summEl = cart.reduce((acc, curr) => acc + curr.count, 0);
   return (
     <Link to="Cart" className="basket">
