@@ -6,7 +6,7 @@ import {addItemToCart } from "../../cartSlice";
 
 const Counter = () => {
   const dispatch = useDispatch();
-  const itemCount = useSelector(state=>state.cart)
+  const itemCount = useSelector(state=>state.cart.cart)
   return (
     <span className="count">
       <span

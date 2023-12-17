@@ -7,7 +7,7 @@ import NavigationBar from "./Nav/Nav";
 import Contacts from "./Contacts/Contacts";
 import BurgerMenu from "./Burger/BurgerMenu";
 
-const Header = ({ cart }) => {
+const Header = () => {
   window.onscroll = function () {
     scrollFunction();
   };
