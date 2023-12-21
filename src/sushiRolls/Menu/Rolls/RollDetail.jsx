@@ -9,9 +9,13 @@ import { addItemToCart } from "../../cartSlice";
 
 const RollDetail = () => {
   const dispatch = useDispatch();
-  const cart = useSelector(state=>state.cart.cart)
+  const cart = useSelector((state) => state.cart);
   const nameEl = useParams();
-  const item = RollsStorage.find((element) =>
+  const rollsDetailWithCart = RollsStorage.map((roll) => ({
+    ...roll,
+    count: cart.find((cartItem) => cartItem.name === roll.name)?.count,
+  }));
+  const item = rollsDetailWithCart.find((element) =>
     element.name === nameEl.name ? element : ""
   );
 
@@ -24,7 +28,6 @@ const RollDetail = () => {
         </div>
         <div className="box-descr__details">
           <h2>{item.name}</h2>
-
           <div className="box-descr__composition">
             <h4>Состав</h4>
             <p className="">{item.structure}</p>
@@ -38,13 +41,14 @@ const RollDetail = () => {
           <div className="dish__weight">{item.weigth} гр.</div>
           <div className="box-descr__details-structure">
             <span>{item.price} ₽.</span>
-            {cart.find((cartItem) => cartItem.name === item.name) ? (
-              <Counter
-                item={item}
-                
-              />
+            {cart.find((cartItem) => cartItem.name === item.name) &&
+            item.count !== undefined ? (
+              <Counter item={item} />
             ) : (
-              <button type="button" onClick={() => dispatch(addItemToCart(item))}>
+              <button
+                type="button"
+                onClick={() => dispatch(addItemToCart(item))}
+              >
                 Добавить в корзину
               </button>
             )}

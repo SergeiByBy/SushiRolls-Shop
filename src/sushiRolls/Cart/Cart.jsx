@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { deleteFromToCart } from "../cartSlice";
 const Cart = () => {
   const dispatch = useDispatch();
-  const cart = useSelector(state=>state.cart.cart)
+  const cart = useSelector((state) => state.cart);
   const plusElFromCart = cart.reduce(
     (acc, curr) => acc + curr.price * curr.count,
     0
@@ -84,9 +84,7 @@ const Cart = () => {
                               {item.weigth} гр.
                             </td>
                             <td>
-                              <Counter
-                               
-                              />
+                              <Counter />
                             </td>
                             <td>{item.price * item.count} Р.</td>
                             <td>
