@@ -4,13 +4,19 @@ import { useParams, Link } from "react-router-dom";
 import { SetsStorage } from "./SetsStorage";
 import ButtonBack from "../../ButtonBack/ButtonBack";
 import Counter from "../../Cart/Counter/Counter";
-
-const SetsDetails = ({ addItemToCart, cart, minusItemFromCart }) => {
+import { useDispatch, useSelector } from "react-redux";
+import { addItemToCart } from "../../cartSlice";
+const SetsDetails = () => {
+  const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart);
   const nameEl = useParams();
-  const item = SetsStorage.find((element) =>
+  const setsDetailWithCart = SetsStorage.map((roll) => ({
+    ...roll,
+    count: cart.find((cartItem) => cartItem.name === roll.name)?.count,
+  }));
+  const item = setsDetailWithCart.find((element) =>
     element.name === nameEl.name ? element : ""
   );
-
   return (
     <div className="container">
       <ButtonBack />
@@ -35,17 +41,12 @@ const SetsDetails = ({ addItemToCart, cart, minusItemFromCart }) => {
           <div className="box-descr__details-structure">
             <span>{item.price} ₽.</span>
             {cart.find((cartItem) => cartItem.name === item.name) ? (
-              <Counter
-                itemCount={
-                  cart.find((cartItem) => cartItem.name === item.name).count
-                }
-                cart={cart}
-                item={item}
-                addItemToCart={addItemToCart}
-                minusItemFromCart={minusItemFromCart}
-              />
+              <Counter item={item} />
             ) : (
-              <button type="button" onClick={() => addItemToCart(item)}>
+              <button
+                type="button"
+                onClick={() => dispatch(addItemToCart(item))}
+              >
                 Добавить в корзину
               </button>
             )}

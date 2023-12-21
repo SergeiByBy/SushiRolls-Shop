@@ -4,10 +4,18 @@ import { useParams, Link } from "react-router-dom";
 import { SushiStorage } from "./Sushi.Storage";
 import ButtonBack from "../../ButtonBack/ButtonBack";
 import Counter from "../../Cart/Counter/Counter";
+import { useDispatch, useSelector } from "react-redux";
+import { addItemToCart } from "../../cartSlice";
 
-const SushiDetails = ({ addItemToCart, cart, minusItemFromCart }) => {
+const SushiDetails = () => {
+  const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart);
   const nameEl = useParams();
-  const item = SushiStorage.find((element) =>
+  const sushiDetailWithCart = SushiStorage.map((roll) => ({
+    ...roll,
+    count: cart.find((cartItem) => cartItem.name === roll.name)?.count,
+  }));
+  const item = sushiDetailWithCart.find((element) =>
     element.name === nameEl.name ? element : ""
   );
 
@@ -35,17 +43,12 @@ const SushiDetails = ({ addItemToCart, cart, minusItemFromCart }) => {
           <div className="box-descr__details-structure">
             <span>{item.price} ₽.</span>
             {cart.find((cartItem) => cartItem.name === item.name) ? (
-              <Counter
-                itemCount={
-                  cart.find((cartItem) => cartItem.name === item.name).count
-                }
-                cart={cart}
-                item={item}
-                addItemToCart={addItemToCart}
-                minusItemFromCart={minusItemFromCart}
-              />
+              <Counter item={item} />
             ) : (
-              <button type="button" onClick={() => addItemToCart(item)}>
+              <button
+                type="button"
+                onClick={() => dispatch(addItemToCart(item))}
+              >
                 Добавить в корзину
               </button>
             )}

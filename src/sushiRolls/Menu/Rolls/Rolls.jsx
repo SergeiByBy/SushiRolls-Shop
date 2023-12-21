@@ -9,14 +9,12 @@ import { addItemToCart } from "../../cartSlice";
 
 const Rolls = () => {
   const dispatch = useDispatch();
-  const cart = useSelector(state=>state.cart)
+  const cart = useSelector((state) => state.cart);
 
-  // useMemo - performance improovement (useMemo, useCallback)
   const rollsWithCart = RollsStorage.map((roll) => ({
     ...roll,
-    count: cart.find((cartItem) => cartItem.name === roll.name)?.count
+    count: cart.find((cartItem) => cartItem.name === roll.name)?.count,
   }));
-
 
   return (
     <div className="container">
@@ -37,10 +35,13 @@ const Rolls = () => {
                   <h3>{item.name}</h3>
                   <p className="box-descr__structure">{item.structure}</p>
                   <div className="box-descr_button">
-                    { item.count !== undefined ? (
+                    {item.count !== undefined ? (
                       <Counter item={item} />
                     ) : (
-                      <button type="button" onClick={() => dispatch(addItemToCart(item))}>
+                      <button
+                        type="button"
+                        onClick={() => dispatch(addItemToCart(item))}
+                      >
                         Добавить в корзину
                       </button>
                     )}

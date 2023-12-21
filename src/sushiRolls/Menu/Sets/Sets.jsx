@@ -1,12 +1,20 @@
 import React from "react";
 import "../Rolls/Rolls.css";
-import "../../Style/media.style.css"
+import "../../Style/media.style.css";
 import { Link } from "react-router-dom";
 import { SetsStorage } from "./SetsStorage";
 import ButtonBack from "../../ButtonBack/ButtonBack";
 import Counter from "../../Cart/Counter/Counter";
+import { useDispatch, useSelector } from "react-redux";
+import { addItemToCart } from "../../cartSlice";
+const Sets = () => {
+  const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart);
 
-const Sets = ({addItemToCart, cart, minusItemFromCart}) => {
+  const setsWithCart = SetsStorage.map((roll) => ({
+    ...roll,
+    count: cart.find((cartItem) => cartItem.name === roll.name)?.count,
+  }));
   return (
     <div className="container">
       <ButtonBack />
@@ -15,7 +23,7 @@ const Sets = ({addItemToCart, cart, minusItemFromCart}) => {
         <h2 className="RollsTitle">СЕТЫ</h2>
 
         <div className="rolls">
-          {SetsStorage.map((item) => {
+          {setsWithCart.map((item) => {
             return (
               <div className="box" key={item.id}>
                 <Link to={item.name}>
@@ -29,20 +37,14 @@ const Sets = ({addItemToCart, cart, minusItemFromCart}) => {
                   <h3>{item.name}</h3>
                   <p className="box-descr__structure">{item.structure}</p>
 
-                    <div className="box-descr_button">
+                  <div className="box-descr_button">
                     {cart.find((cartItem) => cartItem.name === item.name) ? (
-                      <Counter
-                        itemCount={
-                          cart.find((cartItem) => cartItem.name === item.name)
-                            .count
-                        }
-                        cart={cart}
-                        item={item}
-                        addItemToCart={addItemToCart}
-                        minusItemFromCart={minusItemFromCart}
-                      />
+                      <Counter item={item} />
                     ) : (
-                      <button type="button" onClick={() => addItemToCart(item)}>
+                      <button
+                        type="button"
+                        onClick={() => dispatch(addItemToCart(item))}
+                      >
                         Добавить в корзину
                       </button>
                     )}

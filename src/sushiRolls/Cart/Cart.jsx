@@ -84,7 +84,7 @@ const Cart = () => {
                               {item.weigth} гр.
                             </td>
                             <td>
-                              <Counter />
+                              <Counter item={item} />
                             </td>
                             <td>{item.price * item.count} Р.</td>
                             <td>

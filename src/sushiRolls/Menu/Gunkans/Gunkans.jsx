@@ -4,8 +4,18 @@ import { Link } from "react-router-dom";
 import { GunkansStorage } from "./Gunkan.Storage";
 import ButtonBack from "../../ButtonBack/ButtonBack";
 import Counter from "../../Cart/Counter/Counter";
+import { useDispatch, useSelector } from "react-redux";
+import { addItemToCart } from "../../cartSlice";
 
-const Gunkans = ({ addItemToCart, cart, minusItemFromCart }) => {
+const Gunkans = () => {
+  const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart);
+
+  const gunkanssWithCart = GunkansStorage.map((roll) => ({
+    ...roll,
+    count: cart.find((cartItem) => cartItem.name === roll.name)?.count,
+  }));
+
   return (
     <div className="container">
       <ButtonBack />
@@ -13,7 +23,7 @@ const Gunkans = ({ addItemToCart, cart, minusItemFromCart }) => {
       <div className="gunkansBloc">
         <h2 className="RollsTitle">ГУНКАНЫ</h2>
         <div className="gunkans">
-          {GunkansStorage.map((item) => {
+          {gunkanssWithCart.map((item) => {
             return (
               <div className="box" key={item.id}>
                 <Link to={item.name}>
@@ -28,18 +38,12 @@ const Gunkans = ({ addItemToCart, cart, minusItemFromCart }) => {
 
                   <div className="box-descr_button">
                     {cart.find((cartItem) => cartItem.name === item.name) ? (
-                      <Counter
-                        itemCount={
-                          cart.find((cartItem) => cartItem.name === item.name)
-                            .count
-                        }
-                        cart={cart}
-                        item={item}
-                        addItemToCart={addItemToCart}
-                        minusItemFromCart={minusItemFromCart}
-                      />
+                      <Counter item={item} />
                     ) : (
-                      <button type="button" onClick={() => addItemToCart(item)}>
+                      <button
+                        type="button"
+                        onClick={() => dispatch(addItemToCart(item))}
+                      >
                         Добавить в корзину
                       </button>
                     )}
