@@ -14,7 +14,7 @@ const cartSlice = createSlice({
       }
       localStorage.setItem("cart", JSON.stringify(state));
     },
-    deleteFromToCart: (state, action) => {
+    minusElFromCart: (state, action) => {
       const { payload: item } = action;
       const itemIndex = state.findIndex((cart) => cart.name === item.name);
       const existingItem = state[itemIndex];
@@ -28,9 +28,15 @@ const cartSlice = createSlice({
       state = [];
       localStorage.removeItem("cart");
     },
+    deleteElfromCart: (state, action)=>{
+        const {payload: item} = action;
+        const itemIndex = state.findIndex((cart) => cart.name === item.name);
+        state.splice(itemIndex, 1);
+        localStorage.setItem("cart", JSON.stringify(state));
+    }
   },
 });
 
-export const { addItemToCart, deleteFromToCart } = cartSlice.actions;
+export const { addItemToCart, minusElFromCart, deleteElfromCart } = cartSlice.actions;
 
 export default cartSlice.reducer;

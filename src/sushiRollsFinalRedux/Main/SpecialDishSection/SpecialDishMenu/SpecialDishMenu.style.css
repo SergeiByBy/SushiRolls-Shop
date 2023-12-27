@@ -1,0 +1,78 @@
+.SpecialDishMenu_img img {
+  width: 100%;
+  border-radius: 30px;
+  margin-bottom: 15px;
+}
+.SpecialDishMenu_img:hover {
+  cursor: pointer;
+}
+.SpecialDishMenu_box {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+.SpecialDishMenu_title,
+.SpecialDishMenu_descr {
+  text-align: center;
+}
+.SpecialDishMenu_title {
+  font-weight: 700;
+}
+.SpecialDishMenu_pay {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+.SpecialDishMenu_box a {
+  cursor: auto;
+  padding: 10px;
+}
+.SpecialDishMenu_card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 30px;
+  height: 500px;
+  transition: box-shadow 0.3s ease-in-out;
+  border: 1px solid rgba(191, 190, 190, 0.5);
+  box-shadow: 0 0 -5px black;
+  transition: transform 0.3s ease;
+}
+
+.SpecialDishMenu_card:hover {
+  box-shadow: 5px 5px 9px 1px rgba(122, 122, 122, 0.5);
+  transform: scale(103%);
+}
+
+.SpecialDishMenu_price {
+  font-size: 120%;
+  text-decoration: line-through;
+  text-decoration-color: red;
+}
+.SpecialDishMenu_pay h3 {
+  font-weight: 700;
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  text-decoration: initial;
+  text-decoration-color: var(--blackColor);
+}
+.SpecialDishMenu_descr {
+  line-height: 100%;
+  font-weight: 200;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 10px;
+}
+.SpecialDishMenu_descr h3,
+.SpecialDishMenu_descr p {
+  margin: 0;
+}

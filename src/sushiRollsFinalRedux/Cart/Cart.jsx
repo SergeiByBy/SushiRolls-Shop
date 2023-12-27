@@ -4,7 +4,9 @@ import ButtonBack from "../ButtonBack/ButtonBack";
 import Counter from "./Counter/Counter";
 import ModalCart from "./ModalCart/ModalCart";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteFromToCart } from "../cartSlice";
+import { deleteElfromCart } from "../cartSlice";
+
+import PhoneNumberInput from "./PhoneNumberInput/PhoneNumberInput";
 const Cart = () => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
@@ -24,6 +26,8 @@ const Cart = () => {
   useEffect(() => {
     setIsFormValid(name !== "" && phoneNumber !== "");
   }, [name, phoneNumber]);
+
+
   return (
     <div className="container">
       <ModalCart
@@ -84,7 +88,7 @@ const Cart = () => {
                             <td>
                               {" "}
                               <button
-                                onClick={() => dispatch(deleteFromToCart(item))}
+                                onClick={() => dispatch(deleteElfromCart(item))}
                                 className="btn"
                               >
                                 Удалить
@@ -117,17 +121,11 @@ const Cart = () => {
                 <form>
                   <div className="mb-4 form-group">
                     <label htmlFor="tel">Телефон:</label>
-                    <input
-                      type="text"
-                      name="phone"
-                      id="tel"
-                      placeholder="+7(000)000-00-00"
-                    />
+                  <PhoneNumberInput/>
                     <input
                       className="form-control"
                       type="text"
                       placeholder="Имя"
-                      value={name}
                     ></input>
                   </div>
                   <button

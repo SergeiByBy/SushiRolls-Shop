@@ -1,0 +1,11 @@
+.healthy_food .HeroTitle_box {
+    align-items: center;
+
+}
+.healthy_food .HeroTitle_box h1 {
+    font-size: 200%;
+    text-align: center;
+}
+.healthy_food .HeroImgBox img {
+    border-radius: 15px;
+}

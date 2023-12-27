@@ -1,0 +1,17 @@
+.HeroTitle_box {
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+.HeroTitle_box h1 {
+  color: var(--blackColor);
+  font-size: 3rem;
+  margin: 0;
+  margin-bottom: 20px;
+}
+.HeroTitle_box p {
+  color: grey;
+  width: 70%;
+  margin: 0;
+  margin-bottom: 20px;
+}
