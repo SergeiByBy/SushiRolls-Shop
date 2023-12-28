@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { deleteElfromCart } from "../cartSlice";
 
 import PhoneNumberInput from "./PhoneNumberInput/PhoneNumberInput";
+import InputValidator from "./NameFromInput/NameFormInput";
 const Cart = () => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
@@ -26,7 +27,6 @@ const Cart = () => {
   useEffect(() => {
     setIsFormValid(name !== "" && phoneNumber !== "");
   }, [name, phoneNumber]);
-
 
   return (
     <div className="container">
@@ -121,12 +121,8 @@ const Cart = () => {
                 <form>
                   <div className="mb-4 form-group">
                     <label htmlFor="tel">Телефон:</label>
-                  <PhoneNumberInput/>
-                    <input
-                      className="form-control"
-                      type="text"
-                      placeholder="Имя"
-                    ></input>
+                    <PhoneNumberInput />
+                    <InputValidator />
                   </div>
                   <button
                     disabled={!isFormValid}

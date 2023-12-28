@@ -35,12 +35,12 @@ const PhoneNumberInput = () => {
     if (value.length >= 13) {
       value = value.slice(0, 12) + "-" + value.slice(12);
     }
-    console.log(value.length);
 
     setPhone(value);
   };
   return (
     <input
+      className="form-control"
       type="tel"
       value={phone}
       onChange={handleChange}
