@@ -1,8 +1,28 @@
-import React from "react";
-import { redirect } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "./hooks/user-auth";
+import { useDispatch } from "react-redux";
+import { removeUsers } from "./userSlices/userSlice";
+import { useEffect } from "react";
 
 const Home = () => {
-  return <redirect to="/login" />;
+  const dispatch = useDispatch();
+  const { isAuth, email } = useAuth();
+  const navigate = useNavigate();
+
+  // useEffect(() => {
+  //   if (isAuth) {
+  //     navigate("/");
+  //   }
+  // }, [isAuth, navigate]);
+
+  return (
+    <div>
+      <h1>WELCOME</h1>
+      <button onClick={() => dispatch(removeUsers())}>
+        log out from {email}
+      </button>
+    </div>
+  );
 };
 
 export default Home;

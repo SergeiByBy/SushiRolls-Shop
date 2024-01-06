@@ -1,0 +1,115 @@
+.flex {
+  display: flex;
+}
+.open {
+  left: 300px;
+  opacity: 1;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  border-bottom: 3px solid #676767;
+  z-index: 25;
+}
+#header {
+  transition: all 0.4s linear;
+}
+.header__top-line {
+  line-height: 0;
+  font-size: 0;
+  width: 100%;
+  height: 4px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--redColor);
+  z-index: 6;
+}
+.header_container {
+  align-items: center;
+  justify-content: center;
+  padding: 0 80px;
+}
+.list-reset,
+.navItem {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: 160%;
+  transition: all 0.2s ease;
+}
+.navItem:hover {
+  color: var(--redColor);
+}
+.navItem:not(:last-child) {
+  margin-right: 40px;
+}
+.nav-container {
+  display: none;
+  position: relative;
+  height: 60px;
+  padding-left: 24px;
+}
+.overlay {
+  left: 0;
+}
+.menu .navItem {
+  margin: 0;
+  margin: -50px 0;
+  font-size: 200%;
+}
+.mailHeader a::before {
+  content: "@";
+  font-size: 100%;
+  padding: 0 5px;
+
+  color: white;
+}
+.phoneHeader a::before {
+  content: " ✆";
+  font-size: 100%;
+  padding: 0 5px;
+  color: white;
+}
+.adressHeader a::before {
+  content: "&#9971;";
+  font-size: 100%;
+  padding: 0 5px;
+  color: white;
+}
+.phoneHeader a,
+.mailHeader a {
+  color: white;
+}
+.contactsHeader {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 105%;
+  margin-bottom: 10px;
+}
+#contactsHeader {
+  transition: display 0.3s ease;
+}
+.contactsHeader div:not(:last-child) {
+  border-right: 1px solid red;
+}
+.contactsHeader div {
+  padding: 0 10px;
+}
+.deliveryInfoHeader strong {
+  font-size: larger;
+}
+.EntranceRoom a {
+  color: white;
+  font-size: 150%;
+}
+.EntranceRoom a:hover {
+  color: var(--redColor);
+}

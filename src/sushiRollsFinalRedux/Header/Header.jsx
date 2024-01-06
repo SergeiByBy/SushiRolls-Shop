@@ -36,7 +36,7 @@ const Header = ({ cart }) => {
         <div className="container header_container flex">
           <Logo />
           <NavigationBar />
-          <Basket cart={cart} />
+          <Basket />
           <div className=" nav-container">
             <input className="checkbox" type="checkbox" />
             <BurgerMenu />

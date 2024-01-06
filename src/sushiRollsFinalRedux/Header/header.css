@@ -106,3 +106,10 @@
 .deliveryInfoHeader strong {
   font-size: larger;
 }
+.entranceRoom a {
+  color: white;
+  font-size: 160%;
+}
+.entranceRoom a:hover {
+  color: var(--redColor);
+}
