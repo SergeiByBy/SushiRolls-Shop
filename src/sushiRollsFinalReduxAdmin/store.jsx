@@ -1,9 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import cartSlice from "./cartSlice";
+import userSlice from "./Adminpanel/userSlice";
 
 export default configureStore({
-reducer: {
-    cart: cartSlice
-}
-
+  reducer: {
+    cart: cartSlice,
+    user: userSlice,
+  }
 })

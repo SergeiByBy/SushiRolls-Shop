@@ -1,9 +1,8 @@
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import Form from "./Form";
-import { setUsers } from "../userSlices/userSlice";
+import { setUsers } from "./userSlice";
 import { useDispatch } from "react-redux";
-import { useNavigate } from 'react-router-dom';
-
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const dispatch = useDispatch();
@@ -19,7 +18,7 @@ const SignUp = () => {
             token: user.accesToken,
           })
         );
-        navigate('/');
+        navigate("/admin");
       })
       .catch(console.error);
   };

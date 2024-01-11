@@ -1,9 +1,8 @@
 import { useDispatch } from "react-redux";
 import Form from "./Form";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { setUsers } from "../userSlices/userSlice";
-import { useNavigate } from 'react-router-dom';
-
+import { setUsers } from "./userSlice";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -19,7 +18,8 @@ const Login = () => {
             token: user.accesToken,
           })
         );
-        navigate('/');
+        console.log(user);
+        navigate("/admin");
       })
       .catch(console.error);
   };
