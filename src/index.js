@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./asyncPAgination/App";
+import App from "./sushiRollsFinalReduxAdmin/App";
 import { BrowserRouter as Router } from "react-router-dom";
 import Snowfall from "react-snowfall";
 import { Provider } from "react-redux";
